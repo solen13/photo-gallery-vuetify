@@ -27,9 +27,9 @@
       <v-spacer/>
       <v-spacer/>
 
-      <v-card  class="transparent elevation-0 d-flex justify-center align-center " >
+      <v-card  class=" transparent elevation-0 mb-3 d-flex justify-center align-center " >
 
-        <v-btn @click="menuShow" small   class=" mr-12  hidden-md-and-up  transparent elevation-0 "><v-icon small>mdi-menu</v-icon></v-btn>
+        <v-btn @click="menuShow"    class=" mr-8 hidden-md-and-up  transparent elevation-0 "><v-icon >mdi-menu</v-icon></v-btn>
 
         <input style="height: 40px"  class="search-input"  v-model="search"
                type="text"

@@ -35,13 +35,7 @@
 
                 <div @click="shows(n.src.original)" v-if="hover" class="d-flex transition-linear-out-slow-in black v-card--rai " style="height: 100%">
 
-                  <a :href="n.src.original" download> indir</a>
 
-                  <v-btn> copy</v-btn>
-
-                  <v-btn>
-                    <v-icon>mdi-home</v-icon>
-                  </v-btn>
 
                 </div>
 

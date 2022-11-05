@@ -2,7 +2,7 @@ export default {
   imageShow(state,show){
     state.fullImageShow=show
   },
- pelexImageGetSearch(state,get){
+  pelexImageGetSearch(state,get){
     console.log('mutasions',get)
    state.searchGetImage=get
   },

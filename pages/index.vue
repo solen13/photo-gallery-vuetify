@@ -1,12 +1,10 @@
 <template>
 
     <v-main class="cc">
-
           <FullImageShows />
           <image-baner/>
-          <res-menu/>
-
     </v-main>
+
 </template>
 
 <script>
@@ -16,13 +14,13 @@
 
 import FullImageShows from "@/components/full-image-show/full-image-shows";
 import ImageBaner from "@/components/image-banner/imageBaner";
-import ResMenu from "../components/respons-menu/res-menu";
+
 export default {
   name: "index",
-  components:{ResMenu, ImageBaner, FullImageShows, },
+  components:{ImageBaner, FullImageShows, },
   data(){
     return{
-     full:false
+
     }
   },
   mounted() {

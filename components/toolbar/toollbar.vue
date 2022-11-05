@@ -1,11 +1,10 @@
 <template>
-  <v-toolbar class=" blue  " min-height="100" >
+  <v-toolbar class=" blue  " min-height="100"  max-height="100">
 
-    <v-col class="d-flex justify-space-between row mt-7 " >
+    <v-col class="d-flex  row mt-7 " >
 
       <p class="mt-9 hidden-xs-only">Photo Galley</p>
-
-     <v-btn @click="menuShow"   class="mt-9 hidden-md-and-up  transparent elevation-0 "><v-icon small>mdi-menu</v-icon></v-btn>
+      <v-btn @click="menuShow" small   class="mt-9  hidden-md-and-up  transparent elevation-0 "><v-icon small>mdi-menu</v-icon></v-btn>
 
 
       <v-spacer/>
@@ -31,12 +30,12 @@
 
       <v-text-field solo-inverted
                     single-line
-                    class="mr-3 mt-7 text--black inputSearch"
+                    class=" mt-7 mr-2 text--black inputSearch"
                     v-model="search"
                     background-color="blue-grey lighten-5"
                     placeholder="Search.." />
 
-      <v-btn fab small class="white t mt-7" @click="searchBtn"><v-icon color="black">mdi-magnify</v-icon></v-btn>
+      <v-btn fab small class="white mt-7" @click="searchBtn"><v-icon color="black" small>mdi-magnify</v-icon></v-btn>
 
     </v-col>
 
@@ -48,6 +47,7 @@
 export default {
   name: "toollbar",
   components: {},
+
   data(){
    return{
      search:null,
@@ -55,6 +55,7 @@ export default {
  },
   methods:{
     searchBtn(){
+      this.$router.push('/search')
      this.$store.dispatch('image/pelexImageGetSearchs',this.search)
     },
     menuShow(){

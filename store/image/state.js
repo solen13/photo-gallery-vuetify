@@ -1,4 +1,9 @@
 export  default ()=>({
-  imageSrc:''
+  fullImageShow:false,
+  menuShow:false,
+  fullImage:null,
+
+  searchGetImage:null,
+  nextPageState:null
 
 })

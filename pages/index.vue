@@ -1,28 +1,28 @@
 <template>
 
-<v-main class="cc">
+    <v-main class="cc">
 
+          <FullImageShows />
+          <image-baner/>
+          <res-menu/>
 
-</v-main>
+    </v-main>
 </template>
 
 <script>
 
 
+
+
+import FullImageShows from "@/components/full-image-show/full-image-shows";
+import ImageBaner from "@/components/image-banner/imageBaner";
+import ResMenu from "../components/respons-menu/res-menu";
 export default {
   name: "index",
-  components:{},
+  components:{ResMenu, ImageBaner, FullImageShows, },
   data(){
     return{
-      drawer:false,
-      images:null,
-      src:null,
-      searchResualt:null,
-      items: [
-        { text: 'Real-Time', icon: 'mdi-clock' },
-        { text: 'Audience', icon: 'mdi-account' },
-        { text: 'Conversions', icon: 'mdi-flag' },
-      ],
+     full:false
     }
   },
   mounted() {
@@ -38,18 +38,8 @@ export default {
 
   },
   methods:{
-   async show(){
-      const apiKey='563492ad6f91700001000001c274acf928a140efb99b7f5a4c54dd6c'
-     const data =await  fetch(this.$store.state.image.imageSrc,{method:"GET",
-     headers:{
-       Accept:"application/json",
-       Authorization:apiKey
-     }
-     })
-     const res=await  data.json()
-     this.images=res.photos
-     console.log(res)
-   },
+
+
     page1(){
 
       let src='https://api.pexels.com/v1/curated?page=3&per_page=40'
@@ -72,13 +62,6 @@ export default {
       this.$store.commit('image/src',src)
       this.show()
     },
-    next(){
-
-
-    },
-    ugur(e){
-     console.log('ali',e)
-    }
 
   }
 }
@@ -88,14 +71,7 @@ export default {
 .cc{
 
   background-color: #ffffff;
-}
-.imgs:hover{
-  opacity: 0.5;
-}
-.card{
-  position: absolute;
- bottom: 0;
-
+  position: relative;
 }
 
 </style>

@@ -1,5 +1,5 @@
 <template>
-  <div class="">
+  <div class="ugur">
 
     <v-row  class="pa-4" >
       <search-result :data="homePageData"/>

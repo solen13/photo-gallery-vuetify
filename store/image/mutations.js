@@ -2,15 +2,16 @@ export default {
   imageShow(state,show){
     state.fullImageShow=show
   },
+
   pelexImageGetSearch(state,get){
-    console.log('mutasions',get)
    state.searchGetImage=get
   },
-  fullImags(state,paylod){
-    state.fullImage=paylod
+
+  fullImags(state,payload){
+    state.fullImage=payload
   },
-  menuShows(state,paylod){
-    state.menuShow=paylod
+  menuShows(state,payload){
+    state.menuShow=payload
   },
   pageNext(state,next){
     state.nextPageState=next

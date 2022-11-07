@@ -1,67 +1,20 @@
 <template>
 
-    <v-main class="cc">
-          <FullImageShows />
-          <image-baner/>
+    <v-main class="cc"  >
+
+          <image-baner  />
+
     </v-main>
 
 </template>
 
 <script>
-
-
-
-
 import FullImageShows from "@/components/full-image-show/full-image-shows";
 import ImageBaner from "@/components/image-banner/imageBaner";
-
+import SilderBar from "../components/silder-bar";
 export default {
   name: "index",
-  components:{ImageBaner, FullImageShows, },
-  data(){
-    return{
-
-    }
-  },
-  mounted() {
-
-
-  },
-  created() {
-
-
-  },
-
-  watch:{
-
-  },
-  methods:{
-
-
-    page1(){
-
-      let src='https://api.pexels.com/v1/curated?page=3&per_page=40'
-      this.$store.commit('image/src',src)
-     this.show()
-      console.log(this.searchResualt)
-    },
-    page2(){
-      let src='https://api.pexels.com/v1/curated?page=6&per_page=40'
-      this.$store.commit('image/src',src)
-      this.show()
-    },
-    page3(){
-      let src='https://api.pexels.com/v1/search/?page=2&per_page=80&query=car'
-      this.$store.commit('image/src',src)
-      this.show()
-    },
-    search(){
-      let src='https://api.pexels.com/v1/search?query='+this.searchResualt+'&per_page=80'
-      this.$store.commit('image/src',src)
-      this.show()
-    },
-
-  }
+  components:{SilderBar, ImageBaner },
 }
 </script>
 
@@ -70,6 +23,8 @@ export default {
 
   background-color: #ffffff;
   position: relative;
+
+
 }
 
 </style>

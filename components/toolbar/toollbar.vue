@@ -5,22 +5,22 @@
 
       <p class="mt-9 hidden-xs-only">Photo Galley</p>
 
-
       <v-spacer/>
 
       <v-col class="d-flex justify-center mt-7 " >
 
-        <v-btn  class="mx-1 transparent elevation-0 hidden-xs-only ">
+        <v-btn  class="mx-1 transparent elevation-0 hidden-xs-only "  @click="$router.push('/')">
           <v-icon small class="mr-1 ">mdi-home</v-icon>Home
         </v-btn>
 
-        <v-btn class="mx-1 transparent elevation-0 hidden-xs-only">
+        <v-btn class="mx-1 transparent elevation-0 hidden-xs-only" @click="$router.push('/categories')">
           <v-icon small> mdi-dialpad</v-icon>Categories
         </v-btn>
 
-        <v-btn class="mx-1 transparent elevation-0 hidden-xs-only ">
-          <v-icon small class="mr-1">mdi-message-text </v-icon> Contact
+        <v-btn class="mx-1 transparent elevation-0 hidden-xs-only " @click="$router.push('/contact')">
+          <v-icon small class="mr-1 ">mdi-message-text </v-icon> Contact
         </v-btn>
+
 
       </v-col>
 
@@ -29,17 +29,19 @@
 
       <v-card  class=" transparent elevation-0 mb-3 d-flex justify-center align-center " >
 
-        <v-btn @click="menuShow"    class=" mr-8 hidden-md-and-up  transparent elevation-0 "><v-icon >mdi-menu</v-icon></v-btn>
+        <v-btn @click="menuShow"    class=" mr-8 hidden-md-and-up  transparent elevation-0 ">
+          <v-icon >mdi-account-outline</v-icon>
+        </v-btn>
 
         <input style="height: 40px"  class="search-input"  v-model="search"
                type="text"
                placeholder="Search.." />
 
-        <v-btn fab small class="white ml-3" @click="searchBtn"><v-icon color="black" small>mdi-magnify</v-icon></v-btn>
-
+        <v-btn fab small class="white ml-3" @click="searchBtn">
+          <v-icon color="black" small>mdi-account-outline</v-icon>
+        </v-btn>
 
       </v-card>
-
 
     </v-col>
 
@@ -59,12 +61,20 @@ export default {
  },
   methods:{
     searchBtn(){
-      this.$router.push('/search')
-     this.$store.dispatch('image/pelexImageGetSearchs',this.search)
+      if(this.search != null){
+
+        this.$store.dispatch('image/pelexImageGetSearchs',this.search)
+
+        this.$router.push('/search')
+      }
+      else{
+        alert('Aramak istediğin kelimeyi gir')
+      }
     },
     menuShow(){
       this.$store.commit('image/menuShows',true)
-    }
+    },
+
   }
 }
 </script>

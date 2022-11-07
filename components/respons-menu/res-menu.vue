@@ -1,7 +1,9 @@
 <template>
-  <v-card class=" full-image " v-if="this.$store.state.image.menuShow">
+  <v-card  v-if="isShowMenu" class="full-image ">
 
-     <v-btn  fab class="red align-self-end ma-2" @click="exits">X</v-btn>
+     <v-btn  fab class="red align-self-end ma-2" @click="exits">
+       <v-icon large v-text="'mdi-close'"/>
+     </v-btn>
 
       <v-btn  class="mx-1 blue ">
         <v-icon small class="mr-2 ">mdi-home</v-icon>Home
@@ -15,7 +17,6 @@
         <v-icon small class="mr-2">mdi-message-text </v-icon> Contact
       </v-btn>
 
-
   </v-card>
 </template>
 
@@ -27,6 +28,11 @@ export default {
   methods:{
     exits(){
       this.$store.commit('image/menuShows',false)
+    }
+  },
+  computed:{
+    isShowMenu(){
+      return this.$store.state.image.menuShow
     }
   }
 }

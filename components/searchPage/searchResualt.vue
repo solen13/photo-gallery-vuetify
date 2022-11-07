@@ -1,55 +1,38 @@
 <template>
   <v-row>
-  <v-col
-    v-for="n in data "
-    cols="6"
-    sm="4"
-    md="3"
-    lg="2"
-    :key="n">
+    <v-col v-for="(pic,index) in data " cols="6" sm="4" md="3" lg="2" :key="'pic-'+index">
+      <v-hover v-slot:default="{hover}">
+        <v-card width="200" height="150" class="grey black--text" outlined  >
 
-    <v-hover v-slot:default="{hover}">
+          <v-img width="200" height="150"
+                 :src="pic.src.large"
+                 :lazy-src="pic.src.tiny"
+                 alt="yükleniyor..">
 
-      <v-card width="200" height="150" class="grey black--text "  outlined  >
+            <template v-slot:placeholder>
+              <v-row class="fill-height ma-0"  align="center"  justify="center">
+                <v-progress-circular indeterminate color="grey-lighten-5"/>
+              </v-row>
+            </template>
 
-        <v-img
-          width="200" height="150"
-          :src="n.src.large"
-          :lazy-src="n.src.tiny"
-          alt="yükleniyor..">
+          </v-img>
 
-          <template v-slot:placeholder>
+          <v-expand-transition>
+            <div @click="showModal(pic.src.large)" v-if="hover" class="d-flex transition-linear-out-slow-in black v-card--rai " style="height: 100%">
+              <p class="white--text">{{pic.photographer}}</p>
+            </div>
+          </v-expand-transition>
 
-            <v-row class="fill-height ma-0"  align="center"  justify="center">
-              <v-progress-circular indeterminate color="grey-ligften-5"/>
-            </v-row>
-
-          </template>
-
-        </v-img>
-
-        <v-expand-transition>
-
-          <div @click="shows(n.src.large)" v-if="hover" class="d-flex transition-linear-out-slow-in black v-card--rai " style="height: 100%">
-
-            <p class="white--text  "  >{{n.photographer}}</p>
-
-          </div>
-
-        </v-expand-transition>
-
-      </v-card>
-    </v-hover>
-  </v-col>
-
+        </v-card>
+      </v-hover>
+    </v-col>
   </v-row>
 </template>
 
 <script>
-import SilderBar from "../silder-bar";
 export default {
   name: "searcResualt",
-  components: {SilderBar},
+
   props:{
     data:{
       type:Array,
@@ -58,10 +41,9 @@ export default {
 
   },
   methods:{
-    shows(e){
+    showModal(image){
       this.$store.commit("image/imageShow",true)
-      this.$store.commit('image/fullImags',e)
-
+      this.$store.commit('image/fullImags',image)
     }
   }
 }

@@ -1,51 +1,46 @@
 <template>
-  <v-toolbar class=" blue  " min-height="100"  max-height="100">
+  <v-card color="grey lighten-4" flat  tile >
+    <v-toolbar class="blue" height="80">
+      <v-row>
 
-    <v-col class="d-flex  row mt-5 " >
+        <v-col class="d-flex justify-space-between align-center" >
 
-      <p class="mt-9 hidden-xs-only">Photo Galley</p>
+          <div class="hidden-xs-only" v-text="'Photo Gallery'" @click="mainPage"/>
 
-      <v-spacer/>
+          <div class="hidden-xs-only d-flex justify-center " >
 
-      <v-col class="d-flex justify-center mt-7 " >
+            <v-btn  class="mx-1 transparent elevation-0 hidden-xs-only "  @click="$router.push('/')">
+              <v-icon small class="mr-1 ">mdi-home</v-icon>Home
+            </v-btn>
 
-        <v-btn  class="mx-1 transparent elevation-0 hidden-xs-only "  @click="$router.push('/')">
-          <v-icon small class="mr-1 ">mdi-home</v-icon>Home
-        </v-btn>
+            <v-btn class="mx-1 transparent elevation-0 hidden-xs-only" @click="$router.push('/categories')">
+              <v-icon small> mdi-dialpad</v-icon>Categories
+            </v-btn>
 
-        <v-btn class="mx-1 transparent elevation-0 hidden-xs-only" @click="$router.push('/categories')">
-          <v-icon small> mdi-dialpad</v-icon>Categories
-        </v-btn>
+            <v-btn class="mx-1 transparent elevation-0 hidden-xs-only " @click="$router.push('/contact')">
+              <v-icon small class="mr-1 ">mdi-message-text </v-icon> Contact
+            </v-btn>
 
-        <v-btn class="mx-1 transparent elevation-0 hidden-xs-only " @click="$router.push('/contact')">
-          <v-icon small class="mr-1 ">mdi-message-text </v-icon> Contact
-        </v-btn>
+          </div>
 
+          <v-card class="transparent elevation-0 d-flex justify-center align-center " >
 
-      </v-col>
+            <v-btn @click="menuShow"  class="d-sm-none mr-8 hidden-md-and-up  transparent elevation-0 ">
+              <v-icon >mdi-account-outline</v-icon>
+            </v-btn>
 
-      <v-spacer/>
-      <v-spacer/>
+            <input v-model="search" style="height: 40px" class="search-input" @keydown.enter="searchBtn" type="text"  placeholder="Search.." />
 
-      <v-card  class=" transparent elevation-0 mb-3 d-flex justify-center align-center " >
+            <v-btn fab small class="white ml-3" @click="searchBtn">
+              <v-icon color="black" small>mdi-account-outline</v-icon>
+            </v-btn>
 
-        <v-btn @click="menuShow"    class=" mr-8 hidden-md-and-up  transparent elevation-0 ">
-          <v-icon >mdi-account-outline</v-icon>
-        </v-btn>
+          </v-card>
 
-        <input style="height: 40px"  class="search-input"  v-model="search"
-               type="text"
-               placeholder="Search.." />
-
-        <v-btn fab small class="white ml-3" @click="searchBtn">
-          <v-icon color="black" small>mdi-account-outline</v-icon>
-        </v-btn>
-
-      </v-card>
-
-    </v-col>
-
-  </v-toolbar>
+        </v-col>
+      </v-row>
+    </v-toolbar>
+  </v-card>
 </template>
 
 <script>
@@ -64,12 +59,15 @@ export default {
       if(this.search != null){
 
         this.$store.dispatch('image/pelexImageGetSearchs',this.search)
-
         this.$router.push('/search')
+
       }
       else{
         alert('Aramak istediğin kelimeyi gir')
       }
+    },
+    mainPage(){
+      this.$router.push('/')
     },
     menuShow(){
       this.$store.commit('image/menuShows',true)

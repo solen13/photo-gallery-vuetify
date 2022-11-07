@@ -4,6 +4,6 @@ export  default ()=>({
   fullImage:null,
 
   searchGetImage:null,
-  nextPageState:null
+  nextPageState:[]
 
 })

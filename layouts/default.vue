@@ -3,8 +3,9 @@
 <v-app>
   <toollbar/>
   <res-menu/>
-  <FullImageShows/>
+  <full-image-show/>
   <Nuxt/>
+  <b>footer</b>
 </v-app>
 
 
@@ -14,11 +15,11 @@
 
 import toollbar from "../components/toolbar/toollbar";
 import ResMenu from "../components/respons-menu/res-menu";
-import FullImageShows from "../components/full-image-show/full-image-shows";
+import FullImageShow from "../components/full-image-show/full-image-shows";
 
 export default {
   name: 'DefaultLayout',
-  components: {FullImageShows, ResMenu, toollbar},
+  components: {FullImageShow, ResMenu, toollbar},
 }
 
 </script>

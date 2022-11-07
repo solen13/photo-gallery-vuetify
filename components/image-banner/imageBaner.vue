@@ -1,49 +1,53 @@
-<template xmlns="">
+<template>
   <div class="">
 
     <v-row  class="pa-4" >
-      <searc-resualt :data="homePageData"/>
-
+      <search-result :data="homePageData"/>
     </v-row>
 
     <v-col class="d-flex justify-center mb-5 " >
       <v-btn @click="nextpage(i)"  class="mx-1 blue " small fab  v-for="i in 5" :key="i">{{i}}</v-btn>
-
     </v-col>
 
  </div>
 </template>
 
 <script>
-import SearcResualt from "../searchPage/searchResualt";
-import SilderBar from "../silder-bar";
+import SearchResult from "../searchPage/searchResualt";
+import SliderBar from "../silder-bar";
 export default {
   name: "imageBaner",
-  components: {SilderBar, SearcResualt},
+  components: {SearchResult, SliderBar},
+
   data(){
     return{
      itemImage:null
     }
   },
+
   methods:{
+
     shows(e){
       this.$store.commit("image/imageShow",true)
       alert(e)
       this.$store.commit('image/fullImags',e)
 
     },
+
     nextpage(e){
        this.$store.dispatch('image/pelexImage',e)
     },
 
   },
+
   computed:{
+
     homePageData(){
       return this.$store.state.image.nextPageState
     },
 
-
   },
+
   mounted() {
     this.$store.dispatch('image/pelexImage',1)
   }
@@ -51,13 +55,4 @@ export default {
 }
 </script>
 
-<style scoped>
-.v-card--rai{
-  align-items:flex-end;
-  bottom: 0;
-  justify-content: center;
-  opacity: .5;
-  position: absolute;
-  width: 100%;
-}
-</style>
+<style scoped>  </style>

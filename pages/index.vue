@@ -1,30 +1,22 @@
 <template>
 
-    <v-main class="cc"  >
-
-          <image-baner  />
-
+    <v-main class="main-area"  >
+          <image-banner  />
     </v-main>
 
 </template>
 
 <script>
-import FullImageShows from "@/components/full-image-show/full-image-shows";
-import ImageBaner from "@/components/image-banner/imageBaner";
-import SilderBar from "../components/silder-bar";
+import ImageBanner from "@/components/image-banner/imageBaner";
 export default {
   name: "index",
-  components:{SilderBar, ImageBaner },
+  components:{  ImageBanner },
 }
 </script>
 
 <style scoped>
-.cc{
-
+.main-area{
   background-color: #ffffff;
   position: relative;
-
-
 }
-
 </style>

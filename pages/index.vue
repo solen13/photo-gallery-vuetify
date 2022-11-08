@@ -8,9 +8,12 @@
 
 <script>
 import ImageBanner from "@/components/image-banner/imageBaner";
+import modul from "sozluk-api";
 export default {
   name: "index",
   components:{  ImageBanner },
+
+
 }
 </script>
 

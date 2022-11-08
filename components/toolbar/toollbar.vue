@@ -26,13 +26,13 @@
           <v-card class="transparent elevation-0 d-flex justify-center align-center " >
 
             <v-btn @click="menuShow"  class="d-sm-none mr-8 hidden-md-and-up  transparent elevation-0 ">
-              <v-icon >mdi-account-outline</v-icon>
+              <v-icon >mdi-menu</v-icon>
             </v-btn>
 
             <input v-model="search" style="height: 40px" class="search-input" @keydown.enter="searchBtn" type="text"  placeholder="Search.." />
 
             <v-btn fab small class="white ml-3" @click="searchBtn">
-              <v-icon color="black" small>mdi-account-outline</v-icon>
+              <v-icon color="black" small>mdi-magnify</v-icon>
             </v-btn>
 
           </v-card>

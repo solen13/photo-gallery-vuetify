@@ -4,6 +4,7 @@
     <v-list-item  v-for="item in categories" :key="item" class="blue " >
       <v-list-item-title @click="listsClick(item)" class="pa-2" >
         {{item.title}}
+
         <v-divider></v-divider>
       </v-list-item-title>
     </v-list-item>

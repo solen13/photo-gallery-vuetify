@@ -17,19 +17,17 @@
               <v-icon small> mdi-dialpad</v-icon>Categories
             </v-btn>
 
-
-
           </div>
 
-          <v-card class="transparent elevation-0 d-flex justify-center align-center " >
+          <v-card class="transparent elevation-0 d-flex align-center  justify-center mr-7" >
 
-            <v-btn @click="menuShow"  class="d-sm-none mr-8 hidden-md-and-up  transparent elevation-0 ">
+            <v-btn @click="menuShow"  class="d-sm-none  hidden-md-and-up  transparent elevation-0 ">
               <v-icon >mdi-menu</v-icon>
             </v-btn>
 
-            <input v-model="search" style="height: 40px" class="search-input" @keydown.enter="searchBtn" type="text"  placeholder="Search.." />
+            <input v-model="search" style="height: 40px" class="search-input " @keydown.enter="searchBtn" type="text"  placeholder="Search.." />
 
-            <v-btn fab small class="white ml-3" @click="searchBtn">
+            <v-btn fab small class="white ml-2" @click="searchBtn">
               <v-icon color="black" small>mdi-magnify</v-icon>
             </v-btn>
 

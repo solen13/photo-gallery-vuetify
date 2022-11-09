@@ -12,7 +12,7 @@
 
     </vue-magnifier>
 
-    <v-btn  class="ma-4 red align-self-start" small fab  @click="closeModal">X</v-btn>
+    <v-btn  class="ma-4 red exit-btn " small fab  @click="closeModal">X</v-btn>
 
   </v-card>
 
@@ -46,6 +46,11 @@ export default {
     background-color: rgba(0, 0, 0, 0.91);
     top: 0;
     z-index: 99;
+  }
+  .exit-btn{
+    position: absolute;
+    top: 0;
+    right: 0;
   }
 
 </style>

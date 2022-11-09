@@ -13,10 +13,6 @@
         <v-icon class="mr-2"> mdi-dialpad</v-icon>Categories
       </v-btn>
 
-      <v-btn class="mx-1 blue" @click="exits('/contact')">
-        <v-icon small class="mr-2">mdi-message-text </v-icon> Contact
-      </v-btn>
-
   </v-card>
 </template>
 

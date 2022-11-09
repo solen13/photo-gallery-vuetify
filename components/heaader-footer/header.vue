@@ -17,9 +17,7 @@
               <v-icon small> mdi-dialpad</v-icon>Categories
             </v-btn>
 
-            <v-btn class="mx-1 transparent elevation-0 hidden-xs-only " @click="$router.push('/contact')">
-              <v-icon small class="mr-1 ">mdi-message-text </v-icon> Contact
-            </v-btn>
+
 
           </div>
 

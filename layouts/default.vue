@@ -13,8 +13,8 @@
 
 <script>
 
-import toollbar from "../components/toolbar/toollbar";
-import ResMenu from "../components/respons-menu/res-menu";
+import toollbar from "../components/heaader-footer/header";
+import ResMenu from "../components/respons-menu/responsive-menu";
 import FullImageShow from "../components/full-image-show/full-image-shows";
 
 export default {

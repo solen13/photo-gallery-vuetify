@@ -7,10 +7,13 @@
 </template>
 
 <script>
-import ImageBanner from "@/components/image-banner/imageBaner";
+import ImageBanner from "../components/image-banner/imageBanner";
+
 export default {
   name: "index",
   components:{  ImageBanner },
+
+
 }
 </script>
 

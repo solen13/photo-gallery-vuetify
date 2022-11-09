@@ -1,5 +1,5 @@
 <template>
-  <div class="">
+  <div class="ugur">
 
     <v-row  class="pa-4" >
       <search-result :data="homePageData"/>
@@ -13,8 +13,8 @@
 </template>
 
 <script>
-import SearchResult from "../searchPage/searchResualt";
-import SliderBar from "../silder-bar";
+import SearchResult from "../searchPage/image-sorce-banner";
+import SliderBar from "../silde-bar/silde-bar";
 export default {
   name: "imageBaner",
   components: {SearchResult, SliderBar},

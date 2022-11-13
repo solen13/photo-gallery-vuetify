@@ -13,8 +13,8 @@
 </template>
 
 <script>
-import SearchResult from "../searchPage/searchResualt";
-import SliderBar from "../silder-bar";
+import SearchResult from "../searchPage/image-sorce-banner";
+import SliderBar from "../silde-bar/silde-bar";
 export default {
   name: "imageBaner",
   components: {SearchResult, SliderBar},

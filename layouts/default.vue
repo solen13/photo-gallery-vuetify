@@ -5,7 +5,7 @@
   <res-menu/>
   <full-image-show/>
   <Nuxt/>
-  <b>footer</b>
+  <footerA/>
 </v-app>
 
 
@@ -13,13 +13,14 @@
 
 <script>
 
-import toollbar from "../components/toolbar/toollbar";
-import ResMenu from "../components/respons-menu/res-menu";
+import toollbar from "../components/heaader-footer/header";
+import ResMenu from "../components/respons-menu/responsive-menu";
 import FullImageShow from "../components/full-image-show/full-image-shows";
+import footerA from "../components/heaader-footer/footer-A"
 
 export default {
   name: 'DefaultLayout',
-  components: {FullImageShow, ResMenu, toollbar},
+  components: {FullImageShow, ResMenu, toollbar,footerA},
 }
 
 </script>

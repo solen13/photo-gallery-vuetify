@@ -1,0 +1,33 @@
+const list =[
+  {
+    title:'Anilmal'
+  },
+  {
+    title:'Planet'
+  },
+  {
+    title:'person'
+  },
+  {
+    title:'live'
+  },
+  {
+    title:'music'
+  },
+  {
+    title:'Data'
+  },
+  {
+    title:'love'
+  },
+  {
+    title:'book'
+  },
+  {
+    title:'Art'
+  },
+  {
+    title:'furniture'
+  }
+]
+export default list

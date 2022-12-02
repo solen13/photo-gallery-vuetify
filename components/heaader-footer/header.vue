@@ -54,9 +54,9 @@ export default {
     searchBtn(){
       if(this.search != null){
 
-        this.$store.dispatch('image/pelexImageGetSearchs',this.search)
-        this.$router.push('/search')
-
+        this.$route.params.name=this.search
+        this.$router.push('/search/'+this.$route.params.name)
+        console.log(this.$route.params.name)
       }
       else{
         alert('Aramak istediğin kelimeyi gir')

@@ -3,12 +3,15 @@
     <v-row >
 
       <v-col class="white" cols="3">
-       <sildeBar/>
+       <sildeBar />
       </v-col>
 
       <v-col class="white" cols="9">
         <v-row class="px-5 py-5">
-          <searc-resualt :data="categoriesBanner"/>
+          <v-col v-for="item in categoriesBanner">
+            <imagepayload :data="item"/>
+          </v-col>
+
         </v-row>
       </v-col>
 
@@ -18,14 +21,13 @@
 </template>
 
 <script>
-import VueMagnifier from "../../components/image-zoom/vue-magnifier";
-import SearcResualt from "../../components/searchPage/image-sorce-banner";
-import ImageBaner from "../../components/image-banner/imageBanner";
+
+import imagepayload from "../../components/image-payload/image-sorce-banner";
 import sildeBar from "../../components/silde-bar/silde-bar";
 
 export default {
   name: "index",
-  components: {sildeBar, ImageBaner, SearcResualt, VueMagnifier},
+  components: {sildeBar, imagepayload},
 
   methods:{
     listsClick(listitem){
@@ -39,7 +41,6 @@ export default {
     categoriesBanner(){
      return this.$store.state.image.searchGetImage
     }
-
   }
 }
 </script>
